@@ -29,7 +29,14 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware — mounted BEFORE any route.
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://your-platescout.vercel.app",
+    /\.vercel\.app$/,
+  ],
+  credentials: true,
+}));
 app.use(express.json());
 
 function validateInputs({ username, email, password }) {
@@ -122,6 +129,14 @@ app.post("/api/logout", (req, res) => {
   }
 
   return res.status(200).json({ message: "Logged out." });
+});
+
+app.get("/api/health", (req, res) => {
+  res.json({
+    status: "ok",
+    time: new Date().toISOString(),
+    mongo: mongoose.connection.readyState === 1,
+  });
 });
 
 // 404 fallback — must come AFTER all routes so they match first.

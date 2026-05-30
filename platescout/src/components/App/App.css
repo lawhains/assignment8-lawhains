@@ -1,0 +1,17 @@
+.App h1 {
+  background-color: #cca353;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  margin: 0;
+  padding: 1.2rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+.App {
+  font-family: 'Work Sans', sans-serif;
+  position: relative;
+}

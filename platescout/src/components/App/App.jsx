@@ -5,7 +5,7 @@ import HomePage from "../../pages/HomePage";
 import PageNotFound from "../../pages/PageNotFound";
 import LoginForm from "../../forms/LoginForm";
 import SignupForm from "../../forms/SignupForm";
-import Profile from "../../pages/profile";
+import Profile from "../../pages/Profile";
 import ProtectedRoute from "../ProtectedRoute";
 import './App.css';
 
